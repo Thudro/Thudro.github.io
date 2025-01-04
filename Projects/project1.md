@@ -1,11 +1,10 @@
-# Project 1: Awesome Web App
+# Project 1: Coursework!
 ## Description
-This is an awesome web app built using HTML, CSS, and JavaScript.
+My Coursework Project, of course!
 
 ### Features
-- Feature 1
-- Feature 2
-- Feature 3
+Unfortunatly the exam board wouln't like if I shared the details, Sorry!!
+Just know I'm working very very hard on it!
 
 ## Repository
-[GitHub Repo](https://github.com/yourusername/project1)
+[Private repo :(](https://github.com/Thudro)
