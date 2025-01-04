@@ -6,7 +6,7 @@
     <title>My Projects and Ideas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simpledotcss/simple.min.css">
-<style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
@@ -30,7 +30,7 @@
         a:hover {
             text-decoration: underline;
         }
-</style>
+    </style>
 </head>
 <body>
     <header>
@@ -42,21 +42,68 @@
         <section>
             <h2>Projects</h2>
             <ul>
-                <li><a href="projects/project1.md">Project 1: Awesome Web App</a></li>
+                <!--Linked with the data-md tag which specifies where the markdown files are-->
+                <!-- The # href stops it from linking away-->
+                <li><a href="#" data-md="projects/project1.md">Project 1: Awesome Web App</a></li>
             </ul>
         </section>
 
         <section>
             <h2>Project Ideas</h2>
             <ul>
-                <li><a href="ideas/idea1.md">Idea 1: Collaborative Note-Taking App</a></li>
+                <li><a href="#" data-md="ideas/idea1.md">Idea 1: Collaborative Note-Taking App</a></li>
             </ul>
         </section>
+
+        <!--This is where the dynamically rendered mark down will appear-->
+        <div id="content">
+            <h2><u>Details Of Project:</u></h2>
+            <div id="markdown-content"></div>
+        </div>
 
     </main>
 
     <footer>
         <p>© 2025 <a href="https://github.com/Thudro">Thudro</a>. Built with love and GitHub Pages.</p>
+        <p>Using the super cool <a href="https://marked.js.org/">marked.js</a> to render the markdown files!</p>
     </footer>
+    
+    <!-- Using marked.js to render the markdown files-->
+    <script type="module">
+        
+        import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+        //The DOMContentLoaded listener waits until the content is loaded before rendering.
+        document.addEventListener('DOMContentLoaded', () => {
+            //Gets each link that has that markdown tag I added
+            const links = document.querySelectorAll('a[data-md]');
+            const contentDiv = document.getElementById('markdown-content');
+
+            //Adding a click listener, when we click the link then:
+            links.forEach(link => {
+                link.addEventListener('click', async (e) => {
+                    console.log("Click")
+                    console.log(marked)
+                    e.preventDefault();
+
+                    //We get the markdown location from inside the data-md attribute of the element.
+                    const markdownFile = link.getAttribute('data-md');
+                    const response = await fetch(markdownFile);
+                    
+                    if (response.ok) {
+                        // Converts markdown to html via markdown.js and puts it in the markdown-content element.
+                        const markdownText = await response.text();
+                        contentDiv.innerHTML = marked(markdownText);
+                    } else {
+                        contentDiv.innerHTML = '<p>Failed to load content. Please try again later.</p>';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+</html>
+
+</body>
+
+
 </html>
