@@ -1,10 +1,10 @@
-# Project Idea 1: Something.... In Java!
+# Project Idea 1: Something.... In Java (But even bigger)!
 ## Description
-I really want (and need) to learn java, as its widly used and just good to understand. So I want to have a little project I can build up.
+SO, I made the TopicPicker, but I would like to make something bigger
 
 ### Features
-- Run local, just something usable
-- Something I can build on
+- Do something a bit more advanced
+- Posibly a minecraft mod? (Just always seemed like a fun idea)
 
 ## Repository
 [Does Not Exist Yet :(](https://github.com/Thudro)

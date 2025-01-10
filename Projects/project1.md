@@ -1,4 +1,4 @@
-# Project 1: Coursework!
+# Project 1: Coursework! (Ongoing)
 ## Description
 My Coursework Project, of course!
 

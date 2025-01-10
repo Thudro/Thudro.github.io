@@ -1,4 +1,4 @@
-# Project 2: MusicShower
+# Project 2: MusicShower (Finished)
 ## Description
 Displays the current music session details from a hosting machine.
 
