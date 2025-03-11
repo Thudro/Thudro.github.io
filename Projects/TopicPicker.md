@@ -8,4 +8,4 @@ This is a little Java project I'm working on to develop my Java skills. It uses 
 - Simple to use, just using the console
 
 ## Repository
-[Currently Private, Just finishing something up. ](https://github.com/Thudro)
+[Topic Picker!! ](https://github.com/Thudro/Java-TopicPicker)
